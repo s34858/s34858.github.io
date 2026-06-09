@@ -24,7 +24,7 @@
 
       <div class="profile-ring">
         <img
-          src="profile.jpg"
+          src="IMG_20260604_205835.jpg"
           alt="รูปภาพ ธนวันต์ ด่านซ้าย"
           id="profileImg"
           onerror="this.style.display='none'; document.getElementById('noImg').style.display='flex';"
