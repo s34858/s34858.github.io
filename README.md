@@ -5,140 +5,157 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แฟ้มสะสมผลงาน — ธนวันต์ ด่านซ้าย</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — ธนวันต์ ด่านซ้าย</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="page">
+  <div class="bg-particles" id="bgParticles"></div>
 
-        <!-- หน้าปก -->
-        <section id="cover" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="rank-badge">◈ Portfolio — S Rank ◈</div>
-            <div class="profile-ring">
-                <img src="IMG_20260604_205835.jpg" alt="รูปภาพเจ้าของผลงาน"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="no-img">
-                    <span class="no-img-icon">◈</span>
-                    <span>HUNTER</span>
-                </div>
-            </div>
-            <h1>นาย ธนวันต์ ด่านซ้าย</h1>
-            <p class="school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
-            <div class="divider"></div>
-        </section>
+  <div class="page">
 
-        <!-- คำนำ -->
-        <section id="preface" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">System Message</div>
-            <h2><span class="h2-icon">◈</span>คำนำ</h2>
-            <p>
-                แฟ้มสะสมผลงานฉบับนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลเกี่ยวกับ
-                ประวัติส่วนตัว ประวัติการศึกษา กิจกรรม และความสามารถพิเศษ
-                เพื่อใช้ประกอบการพิจารณาศึกษาต่อและแสดงศักยภาพของผู้จัดทำ
-            </p>
-        </section>
+    <!-- หน้าปก -->
+    <section class="card cover" id="cover">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="rank-badge">◈ Portfolio — S Rank ◈</div>
 
-        <!-- ประวัติส่วนตัว -->
-        <section id="profile" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">Hunter Info</div>
-            <h2><span class="h2-icon">◈</span>ประวัติส่วนตัว</h2>
-            <div class="stat-grid">
-                <div class="stat-item">
-                    <span class="stat-key">ชื่อ</span>
-                    <span class="stat-val">นายธนวันต์ ด่านซ้าย</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-key">อายุ</span>
-                    <span class="stat-val">17 ปี</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-key">วันเกิด</span>
-                    <span class="stat-val">วันอังคาร 07 เมษายน</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-key">งานอดิเรก</span>
-                    <span class="stat-val">ยกเวท · เล่นกีฬา · อ่านหนัง</span>
-                </div>
-            </div>
-        </section>
+      <div class="profile-ring">
+        <img
+          src="profile.jpg"
+          alt="รูปภาพ ธนวันต์ ด่านซ้าย"
+          id="profileImg"
+          onerror="this.style.display='none'; document.getElementById('noImg').style.display='flex';"
+        >
+        <div class="no-img" id="noImg">
+          <span class="no-img-icon">◈</span>
+          <span class="no-img-text">HUNTER</span>
+        </div>
+      </div>
 
-        <!-- ประวัติการศึกษา -->
-        <section id="education" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">Skill Acquisition Log</div>
-            <h2><span class="h2-icon">◈</span>ประวัติการศึกษา</h2>
-            <div class="edu-row">
-                <span class="edu-level">ประถมศึกษา</span>
-                <span class="edu-school">โรงเรียนบุญประทีปวิทยาคาร</span>
-            </div>
-            <div class="edu-row">
-                <span class="edu-level">ม.ต้น</span>
-                <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
-            </div>
-            <div class="edu-row">
-                <span class="edu-level">ม.ปลาย</span>
-                <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
-            </div>
-        </section>
+      <h1>นาย ธนวันต์ ด่านซ้าย</h1>
+      <p class="school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
 
-        <!-- กิจกรรม -->
-        <section id="activities" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">Quest Log</div>
-            <h2><span class="h2-icon">◈</span>กิจกรรม</h2>
-            <ul>
-                <li>เข้าร่วมการแข่งขันทักษะวิทยาศาสตร์</li>
-                <li>เข้าร่วมการเเข่งขันคณิตศาสตร์</li>
-                <li>กิจกรรมกีฬาสีของโรงเรียน</li>
-                <li>เข้าร่วมจิตอาสา</li>
-            </ul>
-        </section>
+      <div class="divider"></div>
+      <p class="tagline">◈ SHADOW MONARCH ◈</p>
+    </section>
 
-        <!-- ความสามารถพิเศษ -->
-        <section id="skills" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">Active Skills</div>
-            <h2><span class="h2-icon">◈</span>ความสามารถพิเศษ</h2>
-            <ul>
-                <li>เล่นกีฬาบอสเก็ตบอลกับฟุตบอล</li>
-                <li>มีความรู้ในการออกกำลังกายเเบบใช้เเรงต้าน</li>
-                <li>ตอบสนองต่อการออกกำลังเเบบใช้เเรงต้านได้ดี</li>
-                <li>การเล่นกีฬา  power lifting</li>
-            </ul>
-        </section>
+    <!-- คำนำ -->
+    <section class="card" id="preface">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">System Message</div>
+      <h2><span class="icon">◈</span>คำนำ</h2>
+      <p class="body-text">
+        แฟ้มสะสมผลงานฉบับนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลเกี่ยวกับ
+        ประวัติส่วนตัว ประวัติการศึกษา กิจกรรม และความสามารถพิเศษ
+        เพื่อใช้ประกอบการพิจารณาศึกษาต่อและแสดงศักยภาพของผู้จัดทำ
+      </p>
+    </section>
 
-        <!-- ช่องทางการติดต่อ -->
-        <section id="contact" class="hex-border">
-            <div class="corner-tl"></div><div class="corner-br"></div>
-            <div class="section-label">Communication Channel</div>
-            <h2><span class="h2-icon">◈</span>ช่องทางการติดต่อ</h2>
-            <div class="contact-item">
-                <span class="label">โทรศัพท์</span>
-                <span>095-470-5465</span>
-            </div>
-            <div class="contact-item">
-                <span class="label">Email</span>
-                <span>s34858@banbung.ac.th</span>
-            </div>
-            <div class="contact-item">
-                <span class="label">instagram</span>
-                <span>thnwantdaanchaay</span>
-            </div>
-        </section>
+    <!-- ประวัติส่วนตัว -->
+    <section class="card" id="profile">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">Hunter Info</div>
+      <h2><span class="icon">◈</span>ประวัติส่วนตัว</h2>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <span class="stat-key">ชื่อ</span>
+          <span class="stat-val">นายธนวันต์ ด่านซ้าย</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-key">อายุ</span>
+          <span class="stat-val">17 ปี</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-key">วันเกิด</span>
+          <span class="stat-val">7 เมษายน (วันอังคาร)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-key">งานอดิเรก</span>
+          <span class="stat-val">ยกเวท · กีฬา · อ่านหนัง</span>
+        </div>
+      </div>
+    </section>
 
-    </div><!-- end .page -->
+    <!-- ประวัติการศึกษา -->
+    <section class="card" id="education">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">Skill Acquisition Log</div>
+      <h2><span class="icon">◈</span>ประวัติการศึกษา</h2>
+      <div class="edu-row">
+        <span class="edu-level">ประถมศึกษา</span>
+        <span class="edu-school">โรงเรียนบุญประทีปวิทยาคาร</span>
+      </div>
+      <div class="edu-row">
+        <span class="edu-level">ม.ต้น</span>
+        <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
+      </div>
+      <div class="edu-row">
+        <span class="edu-level">ม.ปลาย</span>
+        <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
+      </div>
+    </section>
 
-    <footer>
-        <p>◈ &copy; 2026 Portfolio — Shadow Monarch ◈</p>
-    </footer>
+    <!-- กิจกรรม -->
+    <section class="card" id="activities">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">Quest Log</div>
+      <h2><span class="icon">◈</span>กิจกรรม</h2>
+      <ul>
+        <li>เข้าร่วมการแข่งขันทักษะวิทยาศาสตร์</li>
+        <li>เข้าร่วมการแข่งขันคณิตศาสตร์</li>
+        <li>กิจกรรมกีฬาสีของโรงเรียน</li>
+        <li>เข้าร่วมจิตอาสา</li>
+      </ul>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- ความสามารถพิเศษ -->
+    <section class="card" id="skills">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">Active Skills</div>
+      <h2><span class="icon">◈</span>ความสามารถพิเศษ</h2>
+      <ul>
+        <li>เล่นกีฬาบาสเก็ตบอลและฟุตบอล</li>
+        <li>มีความรู้ในการออกกำลังกายแบบใช้แรงต้าน</li>
+        <li>ตอบสนองต่อการออกกำลังแบบใช้แรงต้านได้ดี</li>
+        <li>การเล่นกีฬา Power Lifting</li>
+      </ul>
+    </section>
+
+    <!-- ช่องทางการติดต่อ -->
+    <section class="card" id="contact">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <div class="section-label">Communication Channel</div>
+      <h2><span class="icon">◈</span>ช่องทางการติดต่อ</h2>
+      <div class="contact-item">
+        <span class="contact-label">โทรศัพท์</span>
+        <span class="contact-val">095-470-5465</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <span class="contact-val">s34858@banbung.ac.th</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Instagram</span>
+        <span class="contact-val">thnwantdaanchaay</span>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>◈ &copy; 2026 Portfolio — Shadow Monarch ◈</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html>  
+</html>
 
