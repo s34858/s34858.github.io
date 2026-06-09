@@ -19,7 +19,7 @@
             <div class="corner-tl"></div><div class="corner-br"></div>
             <div class="rank-badge">◈ Portfolio — S Rank ◈</div>
             <div class="profile-ring">
-                <img src="profile.jpg" alt="รูปภาพเจ้าของผลงาน"
+                <img src="IMG_20260604_205835.jpg" alt="รูปภาพเจ้าของผลงาน"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="no-img">
                     <span class="no-img-icon">◈</span>
