@@ -1,393 +1,144 @@
 # s34858.github.io
 ยินดีต้อนรับเข้าสู่เว็บไซต์สะสมผลงานของนายธนวันต์ ด่านซ้าย
 
-     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Sans+Thai:wght@300;400;500;700&display=swap');
+     
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มสะสมผลงาน — ธนวันต์ ด่านซ้าย</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <div class="page">
 
-body {
-    background: #03020a;
-    color: #c8c4e8;
-    font-family: 'Noto Sans Thai', sans-serif;
-    min-height: 100vh;
-}
+        <!-- หน้าปก -->
+        <section id="cover" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="rank-badge">◈ Portfolio — S Rank ◈</div>
+            <div class="profile-ring">
+                <img src="profile.jpg" alt="รูปภาพเจ้าของผลงาน"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="no-img">
+                    <span class="no-img-icon">◈</span>
+                    <span>HUNTER</span>
+                </div>
+            </div>
+            <h1>นาย ธนวันต์ ด่านซ้าย</h1>
+            <p class="school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
+            <div class="divider"></div>
+        </section>
 
-/* ===== PARTICLES CANVAS ===== */
-#particles-canvas {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-}
+        <!-- คำนำ -->
+        <section id="preface" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">System Message</div>
+            <h2><span class="h2-icon">◈</span>คำนำ</h2>
+            <p>
+                แฟ้มสะสมผลงานฉบับนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลเกี่ยวกับ
+                ประวัติส่วนตัว ประวัติการศึกษา กิจกรรม และความสามารถพิเศษ
+                เพื่อใช้ประกอบการพิจารณาศึกษาต่อและแสดงศักยภาพของผู้จัดทำ
+            </p>
+        </section>
 
-/* ===== PAGE LAYOUT ===== */
-.page {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
-}
+        <!-- ประวัติส่วนตัว -->
+        <section id="profile" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">Hunter Info</div>
+            <h2><span class="h2-icon">◈</span>ประวัติส่วนตัว</h2>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-key">ชื่อ</span>
+                    <span class="stat-val">นายธนวันต์ ด่านซ้าย</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-key">อายุ</span>
+                    <span class="stat-val">17 ปี</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-key">วันเกิด</span>
+                    <span class="stat-val">วันอังคาร 07 เมษายน</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-key">งานอดิเรก</span>
+                    <span class="stat-val">ยกเวท · เล่นกีฬา · อ่านหนัง</span>
+                </div>
+            </div>
+        </section>
 
-/* ===== HEX BORDER SECTION ===== */
-.hex-border {
-    background: linear-gradient(145deg, #08071a 0%, #0d0b28 60%, #080718 100%);
-    border: 1px solid #3a2d8a;
-    border-radius: 2px;
-    padding: 2.5rem 2rem;
-    position: relative;
-    overflow: hidden;
-    clip-path: polygon(
-        12px 0%,
-        calc(100% - 12px) 0%,
-        100% 12px,
-        100% calc(100% - 12px),
-        calc(100% - 12px) 100%,
-        12px 100%,
-        0% calc(100% - 12px),
-        0% 12px
-    );
-    box-shadow:
-        0 0 30px rgba(80, 60, 200, 0.12),
-        inset 0 0 40px rgba(80, 60, 200, 0.05);
-}
+        <!-- ประวัติการศึกษา -->
+        <section id="education" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">Skill Acquisition Log</div>
+            <h2><span class="h2-icon">◈</span>ประวัติการศึกษา</h2>
+            <div class="edu-row">
+                <span class="edu-level">ประถมศึกษา</span>
+                <span class="edu-school">โรงเรียนบุญประทีปวิทยาคาร</span>
+            </div>
+            <div class="edu-row">
+                <span class="edu-level">ม.ต้น</span>
+                <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
+            </div>
+            <div class="edu-row">
+                <span class="edu-level">ม.ปลาย</span>
+                <span class="edu-school">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
+            </div>
+        </section>
 
-/* grid overlay */
-.hex-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent, transparent 34px,
-            rgba(80, 60, 180, 0.04) 34px,
-            rgba(80, 60, 180, 0.04) 35px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent, transparent 34px,
-            rgba(80, 60, 180, 0.04) 34px,
-            rgba(80, 60, 180, 0.04) 35px
-        );
-    pointer-events: none;
-}
+        <!-- กิจกรรม -->
+        <section id="activities" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">Quest Log</div>
+            <h2><span class="h2-icon">◈</span>กิจกรรม</h2>
+            <ul>
+                <li>เข้าร่วมการแข่งขันทักษะวิทยาศาสตร์</li>
+                <li>เข้าร่วมการเเข่งขันคณิตศาสตร์</li>
+                <li>กิจกรรมกีฬาสีของโรงเรียน</li>
+                <li>เข้าร่วมจิตอาสา</li>
+            </ul>
+        </section>
 
-/* scan line */
-.hex-border::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(120, 100, 255, 0.6) 50%,
-        transparent 100%
-    );
-    animation: scan 6s linear infinite;
-    pointer-events: none;
-}
+        <!-- ความสามารถพิเศษ -->
+        <section id="skills" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">Active Skills</div>
+            <h2><span class="h2-icon">◈</span>ความสามารถพิเศษ</h2>
+            <ul>
+                <li>เล่นกีฬาบอสเก็ตบอลกับฟุตบอล</li>
+                <li>มีความรู้ในการออกกำลังกายเเบบใช้เเรงต้าน</li>
+                <li>ตอบสนองต่อการออกกำลังเเบบใช้เเรงต้านได้ดี</li>
+                <li>การเล่นกีฬา  power lifting</li>
+            </ul>
+        </section>
 
-@keyframes scan {
-    0%   { top: -2px; opacity: 0; }
-    5%   { opacity: 1; }
-    95%  { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
+        <!-- ช่องทางการติดต่อ -->
+        <section id="contact" class="hex-border">
+            <div class="corner-tl"></div><div class="corner-br"></div>
+            <div class="section-label">Communication Channel</div>
+            <h2><span class="h2-icon">◈</span>ช่องทางการติดต่อ</h2>
+            <div class="contact-item">
+                <span class="label">โทรศัพท์</span>
+                <span>095-470-5465</span>
+            </div>
+            <div class="contact-item">
+                <span class="label">Email</span>
+                <span>s34858@banbung.ac.th</span>
+            </div>
+            <div class="contact-item">
+                <span class="label">instagram</span>
+                <span>thnwantdaanchaay</span>
+            </div>
+        </section>
 
-/* ===== CORNER ACCENTS ===== */
-.corner-tl,
-.corner-br {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border-color: #7b65ff;
-    border-style: solid;
-}
+    </div><!-- end .page -->
 
-.corner-tl {
-    top: 8px;
-    left: 8px;
-    border-width: 2px 0 0 2px;
-}
+    <footer>
+        <p>◈ &copy; 2026 Portfolio — Shadow Monarch ◈</p>
+    </footer>
 
-.corner-br {
-    bottom: 8px;
-    right: 8px;
-    border-width: 0 2px 2px 0;
-}
+    <script src="script.js"></script>
+</body>
+</html>  
 
-/* ===== SECTION LABEL ===== */
-.section-label {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: #5e4ec9;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-}
-
-/* ===== RANK BADGE ===== */
-.rank-badge {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: #a090f0;
-    border: 1px solid #3a2d8a;
-    padding: 4px 16px;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    clip-path: polygon(
-        8px 0%, calc(100% - 8px) 0%,
-        100% 8px, 100% calc(100% - 8px),
-        calc(100% - 8px) 100%, 8px 100%,
-        0% calc(100% - 8px), 0% 8px
-    );
-    background: rgba(60, 40, 150, 0.3);
-}
-
-/* ===== PROFILE RING ===== */
-.profile-ring {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 2px solid #5a46cc;
-    box-shadow:
-        0 0 20px rgba(90, 70, 200, 0.5),
-        inset 0 0 20px rgba(90, 70, 200, 0.1);
-    margin: 0 auto 1.5rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.profile-ring img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.no-img {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, #1a1440, #080718);
-    color: #7b65ff;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    gap: 4px;
-}
-
-.no-img-icon {
-    font-size: 28px;
-    color: #9080e0;
-}
-
-/* ===== COVER SECTION ===== */
-#cover {
-    text-align: center;
-}
-
-#cover h1 {
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #e8e4ff;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
-}
-
-.school {
-    color: #7b65ff;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-}
-
-.divider {
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #5a46cc, transparent);
-    margin: 1.5rem auto 0;
-}
-
-/* ===== HEADINGS ===== */
-h2 {
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #c8c4e8;
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.h2-icon {
-    color: #7b65ff;
-    font-size: 1rem;
-    filter: drop-shadow(0 0 4px #5a46cc);
-}
-
-/* ===== STAT GRID (ประวัติส่วนตัว) ===== */
-.stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-}
-
-.stat-item {
-    background: rgba(30, 20, 70, 0.5);
-    border: 1px solid #2a1f6a;
-    padding: 0.75rem 1rem;
-    clip-path: polygon(
-        6px 0%, 100% 0%,
-        100% calc(100% - 6px),
-        calc(100% - 6px) 100%,
-        0% 100%, 0% 6px
-    );
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.stat-key {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    color: #5e4ec9;
-    letter-spacing: 0.15em;
-}
-
-.stat-val {
-    font-size: 0.875rem;
-    color: #b8b0e0;
-    font-weight: 500;
-}
-
-/* ===== EDUCATION ROWS ===== */
-.edu-row {
-    display: flex;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(58, 45, 138, 0.3);
-    align-items: center;
-}
-
-.edu-row:last-child {
-    border-bottom: none;
-}
-
-.edu-level {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    color: #7b65ff;
-    letter-spacing: 0.1em;
-    min-width: 80px;
-    padding: 3px 8px;
-    border: 1px solid #3a2d8a;
-    text-align: center;
-    clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
-    background: rgba(60, 40, 150, 0.2);
-}
-
-.edu-school {
-    font-size: 0.875rem;
-    color: #c8c4e8;
-}
-
-/* ===== LISTS (กิจกรรม / ความสามารถ) ===== */
-ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-ul li {
-    padding: 0.6rem 1rem;
-    font-size: 0.875rem;
-    color: #c8c4e8;
-    background: rgba(20, 15, 55, 0.5);
-    border-left: 2px solid #5a46cc;
-    position: relative;
-}
-
-ul li::before {
-    content: '◈';
-    color: #7b65ff;
-    margin-right: 8px;
-    font-size: 10px;
-}
-
-/* ===== CONTACT ===== */
-.contact-item {
-    display: flex;
-    gap: 1rem;
-    padding: 0.7rem 0;
-    border-bottom: 1px solid rgba(58, 45, 138, 0.25);
-    align-items: center;
-}
-
-.contact-item:last-child {
-    border-bottom: none;
-}
-
-.contact-item .label {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    color: #5e4ec9;
-    letter-spacing: 0.12em;
-    min-width: 80px;
-}
-
-.contact-item span:last-child {
-    font-size: 0.875rem;
-    color: #a090f0;
-}
-
-/* ===== PREFACE ===== */
-#preface p {
-    font-size: 0.9rem;
-    color: #9890c8;
-    line-height: 1.9;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 1.5rem 0 0.5rem;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: #3a2d8a;
-    letter-spacing: 0.2em;
-    position: relative;
-    z-index: 1;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-    .stat-grid {
-        grid-template-columns: 1fr;
-    }
-
-    #cover h1 {
-        font-size: 1.4rem;
-    }
-
-    .hex-border {
-        padding: 2rem 1.25rem;
-    }
-}               
