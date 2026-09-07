@@ -1,37 +1,801 @@
-<!DOCTYPE html> 
-<html lang="th"> 
-<head> 
- <meta charset="UTF-8"> 
- <meta viewport="width=device-width, initial-scale=1.0"> 
- <title>แฟ้มสะสมงานของฉัน ้ </title> 
- <style> 
-body { font-family: sans-serif; background-color: #f4f7f6; text-align: center;  padding: 30px; } 
-.container { max-width: 800px; margin: 0 auto; } 
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:  8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; } 
-.btn { display: inline-block; background: #27ae60; color: green; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; } 
- </style> 
-</head> 
-<body> 
- <div class="container"> 
- <h1> แฟ้มสะสมงาน ้ (Portfolio)</h1> 
- <p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p> 
-<!-- กล่องผลงานชิ้นที่ ้ิ 1 --> 
- <div class="project-card"> 
- <h3>1. โครงงาน/ชนงานวิทยาศาสตร์คำนวณ </h3> 
- <p>รายละเอียดชิ้นงาน : เขียนอธิบายสันๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง ้ </p> 
- </div> 
-<!-- กล่องผลงานชิ้นที่ 2 --> 
- <div class="project-card"> 
- <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3> 
- <p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p> 
- </div> 
-  <!-- กล่องผลงานชิ้นที่ 3 --> 
-   <div class="project-card"> 
- <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3> 
- <p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p> 
- </div> 
-<!-- ปุ่มกดกลับหน้าแรก --> 
- <a href="index.html" class="btn"> กลับหน้าแรก</a> 
- </div> 
-</body> 
-</html>  
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEERAPAT MABAI — Official Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0B0F17;
+    --card-bg: rgba(21, 29, 43, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent: #00F2FE;
+    --accent-gradient: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+    --accent-glow: rgba(0, 242, 254, 0.25);
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --text-dim: #6B7280;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(79, 172, 254, 0.06) 0%, transparent 40%);
+  }
+
+  /* --- HEADER HERO SECTION --- */
+  header {
+    padding: 80px 24px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+  }
+
+  .photo-frame {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .photo-frame img.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  .school-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 3px solid var(--bg-dark);
+    object-fit: contain;
+    padding: 3px;
+  }
+
+  .hero-info {
+    flex-grow: 1;
+  }
+
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .badge-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  .hero-info h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+
+  .hero-info p {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  /* --- STICKY NAV TABS --- */
+  .nav-wrapper {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+  }
+
+  nav.tabs {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 50px;
+    padding: 6px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  nav.tabs::-webkit-scrollbar { display: none; }
+
+  nav.tabs button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 30px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  nav.tabs button:hover {
+    color: var(--text-main);
+  }
+
+  nav.tabs button.active {
+    background: var(--accent-gradient);
+    color: #0B0F17;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--accent-glow);
+  }
+
+  /* --- MAIN CONTENT AREA --- */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .panel {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .panel.active {
+    display: block;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-header h2::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--accent-gradient);
+    border-radius: 4px;
+  }
+
+  /* Intro & Profile */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .info-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .info-box .label {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .info-box .value {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-main);
+  }
+
+  /* Education Timeline */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .edu-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .edu-card:hover {
+    transform: translateX(6px);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+
+  .edu-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 8px;
+  }
+
+  .edu-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .edu-details h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+  }
+
+  .edu-details p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* Lists (Activities / Skills) */
+  .feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .feature-list li {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .feature-list li::before {
+    content: '✓';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Certificates Grid */
+  .honor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .honor-card {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .honor-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .honor-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #000;
+  }
+
+  .honor-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .honor-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .honor-year {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .honor-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    border: 2px dashed var(--card-border);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+  }
+
+  /* Contact Cards */
+  .contact-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    padding: 18px 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .contact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+
+  .contact-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-type {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-main);
+  }
+
+  .contact-arrow {
+    color: var(--accent);
+    font-size: 18px;
+  }
+
+  /* Footer & Action */
+  .back-wrap {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-gradient);
+    color: #0B0F17;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px var(--accent-glow);
+    transition: all 0.25s ease;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px var(--accent-glow);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-dim);
+    font-size: 13px;
+    border-top: 1px solid var(--card-border);
+  }
+
+  /* Reveal Animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal-item {
+    opacity: 0;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Page Transition Curtain */
+  .curtain {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-dark);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .curtain.active {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    transform: scaleY(1);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px 24px;
+      gap: 20px;
+    }
+
+    .photo-frame img.avatar {
+      width: 120px;
+      height: 120px;
+    }
+
+    .panel {
+      padding: 24px 20px;
+    }
+
+    .feature-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="curtain" id="curtain"></div>
+
+<header>
+  <div class="hero-card">
+    <div class="photo-frame">
+      <img class="avatar" src="frank2.jpg" alt="พีระพัฒน์ มะใบ">
+      <img class="school-badge" src="school-logo.png" alt="ตราโรงเรียน">
+    </div>
+    <div class="hero-info">
+      <span class="badge-tag">Student Portfolio</span>
+      <h1>พีระพัฒน์ มะใบ</h1>
+      <p>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-wrapper">
+  <nav class="tabs">
+    <button class="active" data-tab="intro">คำนำ</button>
+    <button data-tab="profile">ประวัติส่วนตัว</button>
+    <button data-tab="education">ประวัติการศึกษา</button>
+    <button data-tab="activities">กิจกรรม</button>
+    <button data-tab="skills">ความสามารถ</button>
+    <button data-tab="honors">เกียรติบัตร</button>
+    <button data-tab="contact">ติดต่อ</button>
+  </nav>
+</div>
+
+<main>
+
+  <section class="panel active" id="intro">
+    <div class="section-header">
+      <h2>คำนำ</h2>
+    </div>
+    <p style="color: var(--text-muted); font-size: 16px; leading-height: 1.8;">
+      แฟ้มสะสมผลงานฉบับนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลเกี่ยวกับประวัติส่วนตัว
+      ประวัติการศึกษา กิจกรรม และความสามารถพิเศษ เพื่อใช้ประกอบการพิจารณา
+      ศึกษาต่อและแสดงศักยภาพของผู้จัดทำในด้านต่างๆ
+    </p>
+  </section>
+
+  <section class="panel" id="profile">
+    <div class="section-header">
+      <h2>ประวัติส่วนตัว</h2>
+    </div>
+    <div class="profile-grid">
+      <div class="info-box">
+        <span class="label">ชื่อ-นามสกุล</span>
+        <span class="value">นายพีระพัฒน์ มะใบ</span>
+      </div>
+      <div class="info-box">
+        <span class="label">วันเกิด</span>
+        <span class="value">21 มกราคม 2552</span>
+      </div>
+      <div class="info-box">
+        <span class="label">อายุ</span>
+        <span class="value">17 ปี</span>
+      </div>
+      <div class="info-box">
+        <span class="label">งานอดิเรก</span>
+        <span class="value">เล่นกีฬา / ฟังเพลง / เล่นเกม</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="education">
+    <div class="section-header">
+      <h2>ประวัติการศึกษา</h2>
+    </div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div class="edu-icon">
+          <img src="primary-logo.png" alt="อนุบาลบ้านบึง">
+        </div>
+        <div class="edu-details">
+          <h3>ระดับประถมศึกษา</h3>
+          <p>โรงเรียนอนุบาลบ้านบึง</p>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">
+          <img src="school-logo.png" alt="บ้านบึงอุตสาหกรรมนุเคราะห์">
+        </div>
+        <div class="edu-details">
+          <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+          <p>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">
+          <img src="school-logo.png" alt="บ้านบึงอุตสาหกรรมนุเคราะห์">
+        </div>
+        <div class="edu-details">
+          <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+          <p>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="activities">
+    <div class="section-header">
+      <h2>กิจกรรมที่ เข้าร่วม</h2>
+    </div>
+    <ul class="feature-list">
+      <li>เข้าร่วมการแข่งขันคณิตศาสตร์ภายในโรงเรียน</li>
+      <li>กิจกรรมจิตอาสาพัฒนาชุมชน</li>
+      <li>กิจกรรมกีฬาสีของโรงเรียน</li>
+      <li>ค่ายวิชาการและค่ายอาชีพ</li>
+    </ul>
+  </section>
+
+  <section class="panel" id="skills">
+    <div class="section-header">
+      <h2>ความสามารถพิเศษ</h2>
+    </div>
+    <ul class="feature-list">
+      <li>เขียนโปรแกรม JavaScript เบื้องต้น</li>
+      <li>สื่อสารภาษาอังกฤษได้</li>
+      <li>ใช้งานโปรแกรม Microsoft Office ได้อย่างคล่องแคล่ว</li>
+    </ul>
+  </section>
+
+  <section class="panel" id="honors">
+    <div class="section-header">
+      <h2>เกียรติบัตร & รางวัล</h2>
+    </div>
+    <div class="honor-grid" id="honor-grid"></div>
+  </section>
+
+  <section class="panel" id="contact">
+    <div class="section-header">
+      <h2>ช่องทางการติดต่อ</h2>
+    </div>
+    <div class="contact-stack">
+      <a href="tel:0815478230" class="contact-card">
+        <div class="contact-left">
+          <span class="contact-type">PHONE</span>
+          <span class="contact-value">081-547-8230</span>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+      <a href="mailto:s34833@banbung.ac.th" class="contact-card">
+        <div class="contact-left">
+          <span class="contact-type">EMAIL</span>
+          <span class="contact-value">s34833@banbung.ac.th</span>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+      <a href="https://www.facebook.com/peerapat.mabai.75?locale=th_TH" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-left">
+          <span class="contact-type">FACEBOOK</span>
+          <span class="contact-value">Peerapat Mabai</span>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="back-wrap">
+    <a href="index.html" class="cta-btn" id="backLink">
+      <span>กลับหน้าแรก</span>
+      <span>→</span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Portfolio — Peerapat Mabai. All Rights Reserved.
+</footer>
+
+<script>
+  const honors = [
+    { img: 'cert1.jpg', title: 'รางวัลชมเชย คลิปวิดีโอ TikTok "ละครคุณธรรมคณิตศาสตร์"', year: '2567' },
+    { img: 'cert2.jpg', title: 'อบรมเสริมสร้างความปลอดภัยในสถานศึกษา (ดับเพลิง-อพยพหนีไฟ)', year: '2567' },
+    { img: 'cert3.jpg', title: 'ทดสอบกำลังใจ กระโดดหอสูง 34 ฟุต (นศท.)', year: '2569' },
+    { img: 'cert4.jpg', title: 'ประกวดคำขวัญต่อต้านการทุจริต ระดับ ม.ปลาย', year: '2568' },
+  ];
+
+  const honorGrid = document.getElementById('honor-grid');
+
+  if (honors.length === 0) {
+    honorGrid.innerHTML = '<div class="honor-empty">ยังไม่มีข้อมูลเกียรติบัตร</div>';
+  } else {
+    honorGrid.innerHTML = honors.map(h => `
+      <a class="honor-card" href="${h.img}" target="_blank" rel="noopener">
+        <img class="honor-thumb" src="${h.img}" alt="${h.title}">
+        <div class="honor-body">
+          <p class="honor-title">${h.title}</p>
+          ${h.year ? `<span class="honor-year">พ.ศ. ${h.year}</span>` : ''}
+        </div>
+      </a>
+    `).join('');
+  }
+
+  function revealPanel(panel) {
+    if (!panel) return;
+    const items = panel.querySelectorAll('.section-header, p, .info-box, .edu-card, .feature-list li, .honor-card, .contact-card');
+    items.forEach((el, i) => {
+      el.classList.remove('reveal-item');
+      void el.offsetWidth;
+      el.style.animationDelay = (i * 50) + 'ms';
+      el.classList.add('reveal-item');
+    });
+  }
+
+  const buttons = document.querySelectorAll('nav.tabs button');
+  const panels = document.querySelectorAll('.panel');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      
+      btn.classList.add('active');
+      const activePanel = document.getElementById(btn.dataset.tab);
+      activePanel.classList.add('active');
+      revealPanel(activePanel);
+
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  });
+
+  revealPanel(document.getElementById('intro'));
+
+  const backLink = document.getElementById('backLink');
+  const curtain = document.getElementById('curtain');
+  if (backLink) {
+    backLink.addEventListener('click', function(e) {
+      const href = backLink.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      curtain.classList.add('active');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  }
+</script>
+
+</body>
+</html>
