@@ -172,6 +172,45 @@ main { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
 /* Intro paragraph */
 .intro-text { color: var(--text-muted); font-size: 15.5px; line-height: 1.8; margin-bottom: 32px; }
 
+/* Activity photo showcase */
+.activity-photo-wrap {
+  margin-bottom: 28px;
+}
+
+.activity-photo-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.activity-photo-frame::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  z-index: 2;
+}
+
+.activity-photo-frame img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.activity-photo-caption {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.015);
+}
+
 /* Home nav grid (links to each section) */
 .nav-grid {
   display: grid;
@@ -273,6 +312,31 @@ main { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
   font-size: 12px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+}
+
+.feature-list li.has-photo {
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.feature-list li.has-photo::before { display: none; }
+
+.feature-list li.has-photo .activity-photo-frame {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.feature-list li.has-photo .activity-photo-frame img {
+  max-height: 320px;
+}
+
+.feature-list li.has-photo span {
+  padding: 14px 20px;
 }
 
 /* Certificates Grid */
@@ -381,6 +445,7 @@ footer {
   .photo-frame img.avatar { width: 120px; height: 120px; }
   .panel { padding: 28px 20px; }
   .feature-list { grid-template-columns: 1fr; }
+  .activity-photo-frame img { max-height: 260px; }
 }
 
 </style>
@@ -420,11 +485,17 @@ footer {
     <div class="section-header">
       <h2>กิจกรรมที่เข้าร่วม</h2>
     </div>
+
     <ul class="feature-list">
       <li>เข้าร่วมการแข่งขันคณิตศาสตร์ภายในโรงเรียน</li>
       <li>เเข่งบอลยาเสพติด</li>
       <li>กิจกรรมกีฬาสีของโรงเรียน</li>
-      <li>เเข่งเพาะกาย</li>
+      <li class="has-photo">
+        <div class="activity-photo-frame">
+          <img src="pca-act.jpg" alt="เเข่งเพาะกาย">
+        </div>
+        <span>เเข่งเพาะกาย</span>
+      </li>
     </ul>
   </section>
 
@@ -445,7 +516,7 @@ footer {
 
 function revealPanel(panel) {
   if (!panel) return;
-  const items = panel.querySelectorAll('.section-header, p, .info-box, .edu-card, .feature-list li, .honor-card, .contact-card, .nav-card');
+  const items = panel.querySelectorAll('.section-header, p, .info-box, .edu-card, .feature-list li, .honor-card, .contact-card, .nav-card, .activity-photo-wrap');
   items.forEach((el, i) => {
     el.classList.remove('reveal-item');
     void el.offsetWidth;
